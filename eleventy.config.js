@@ -8,8 +8,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.setDataDirectory("_data");
   eleventyConfig.setOutputDirectory("_site");
 
-  eleventyConfig.setServerPassthroughCopyBehavior("./src/assets/css/style.css");
-  eleventyConfig.setServerPassthroughCopyBehavior("./src/assets/img");
+  eleventyConfig.addPassthroughCopy("./src/assets/css/style.css");
+  eleventyConfig.addPassthroughCopy("./src/assets/img");
 
   eleventyConfig.addFilter('numberFormat', number => {
     
