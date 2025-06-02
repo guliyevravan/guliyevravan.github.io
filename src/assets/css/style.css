@@ -10,6 +10,8 @@
     --color-green-300: oklch(87.1% 0.15 154.449);
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-600: oklch(54.6% 0.245 262.881);
+    --color-blue-700: oklch(48.8% 0.243 264.376);
+    --color-blue-900: oklch(37.9% 0.146 265.522);
     --color-slate-400: oklch(70.4% 0.04 256.788);
     --color-slate-500: oklch(55.4% 0.046 257.417);
     --color-slate-700: oklch(37.2% 0.044 257.287);
@@ -479,9 +481,24 @@
   .underline {
     text-decoration-line: underline;
   }
+  .decoration-blue-500 {
+    text-decoration-color: var(--color-blue-500);
+  }
+  .decoration-slate-500 {
+    text-decoration-color: var(--color-slate-500);
+  }
+  .underline-offset-2 {
+    text-underline-offset: 2px;
+  }
+  .underline-offset-4 {
+    text-underline-offset: 4px;
+  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .filter {
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
   .hover\:text-blue-600 {
     &:hover {
@@ -565,6 +582,42 @@
     @media (width >= 40rem) {
       font-size: var(--text-xs) !important;
       line-height: var(--tw-leading, var(--text-xs--line-height)) !important;
+    }
+  }
+  .min-sm\:hover\:decoration-blue-600 {
+    @media (width >= 40rem) {
+      &:hover {
+        @media (hover: hover) {
+          text-decoration-color: var(--color-blue-600);
+        }
+      }
+    }
+  }
+  .min-sm\:hover\:decoration-blue-700 {
+    @media (width >= 40rem) {
+      &:hover {
+        @media (hover: hover) {
+          text-decoration-color: var(--color-blue-700);
+        }
+      }
+    }
+  }
+  .min-sm\:hover\:decoration-blue-900 {
+    @media (width >= 40rem) {
+      &:hover {
+        @media (hover: hover) {
+          text-decoration-color: var(--color-blue-900);
+        }
+      }
+    }
+  }
+  .min-sm\:hover\:decoration-slate-700 {
+    @media (width >= 40rem) {
+      &:hover {
+        @media (hover: hover) {
+          text-decoration-color: var(--color-slate-700);
+        }
+      }
     }
   }
   .md\:col-span-2 {
@@ -659,6 +712,59 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-drop-shadow-size {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-shadow {
   syntax: "*";
   inherits: false;
@@ -735,6 +841,19 @@
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-outline-style: solid;
+      --tw-blur: initial;
+      --tw-brightness: initial;
+      --tw-contrast: initial;
+      --tw-grayscale: initial;
+      --tw-hue-rotate: initial;
+      --tw-invert: initial;
+      --tw-opacity: initial;
+      --tw-saturate: initial;
+      --tw-sepia: initial;
+      --tw-drop-shadow: initial;
+      --tw-drop-shadow-color: initial;
+      --tw-drop-shadow-alpha: 100%;
+      --tw-drop-shadow-size: initial;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;
