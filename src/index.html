@@ -1,0 +1,99 @@
+---
+layout: home.html
+title: Əsas səhifə
+---
+<h1>Full Stack Veb Developer</h1>
+
+<section class="grid grid-cols-12 gap-4 mt-4 text-xl">
+
+  <div class="col-span-6 border border-gray-400 rounded-xl p-3 bg-gray-100 flex items-center gap-2">
+    <div class="flex flex-col">
+      <span>Bakı</span>
+      <span>Azərbaycan</span>
+    </div>
+    <span class="icon-[openmoji--location-indicator] text-5xl ms-auto"></span>
+  </div>
+
+  <div class="col-span-6 border border-gray-400 rounded-xl p-3 bg-gray-100">
+    <div class="flex items-center w-full gap-2">
+      <a class="flex items-center gap-2" href="tel:{{ configs.number }}">
+        <i class="icon-[carbon--phone-filled] text-slate-500"></i>
+        <span>{{ configs.number | numberFormat }}</span>
+      </a>
+      <a 
+        href="https://wa.me/{{ configs.number }}?text={{ configs.whatsapp_message }}"
+        target="_blank"
+        class="flex items-center border border-black bg-green-300 rounded-sm text-sm px-2 gap-1 ms-auto">
+        <i class="icon-[nimbus--whatsapp]"></i>
+        <span>Whatsapp-da yaz</span>
+      </a>
+    </div>
+    <a href="mailto:{{ configs.mail }}" class="flex items-center gap-2">
+      <i class="icon-[material-symbols--mail]  text-slate-500" style="width: 1.2em; height: 1.2em;"></i>
+      <span>{{ configs.mail }}</span>
+    </a>
+  </div>
+</section>
+
+<section class=" mt-4 ">
+  <!-- <p>Saytıma xoş gəlibsiniz. Mən <b>Rəvan Quliyev</b>. Yəqin ki, mənim haqqımda az da olsa məlumat almaq istəyirsiniz. Bir iki cümlə ilə sizə özümü ifadə etmək istəyirəm.</p>
+  <p>Mən sadə şeyləri sadə yollarla həll etməyi sevən biriyəm. Heç vaxt ürəyimə yatmayan texnologiyalardan 
+  sırf məşhurdur deyə istifadə etməmişəm. Ona görə də yazdığım hər kod həvəslə yazılıb</p>
+  <p>OpenSource dünyasına xüsusi hörmətim var. Heç bir təmənna gözləmədən vaxtını və resurslarını bizim üçün 
+  xərcləyən bu qəhramanlara təşəkkürümü bildirirəm.</p>
+  <p>Bəlkə sizə peşəkar görünməyəcək, amma insani münasibətlərdə səmimiyyətə çox önəm verirəm</p>
+  <p>Saytımdan da gördüyünüz kimi sadəliyi sevirəm. İnsanları gözünü yoran lazımsız rənglərdən və</p> -->
+</section>
+
+<section>
+
+  <h2>Portfolio</h2>
+  
+  <div class="grid grid-cols-12 gap-4">
+    {% for portfolio in collections.portfolio %}
+      <article class="col-span-3 border border-gray-400 p-3 rounded-xl bg-gray-100 h-full flex flex-col">
+
+        <header class="flex gap-2">
+          <h3 class="text-xl font-bold mb-0">{{ portfolio.data.name }}</h3>
+          <span class="w-10 h-10 shrink-0 ms-auto">
+            <img src="{{ portfolio.data.logo }}" class="w-full h-auto">
+          </span>
+        </header>
+
+        <picture>
+          <img src="{{portfolio.data.image}}" class="w-full">
+        </picture>
+
+        <footer class="flex items-center gap-3 mt-auto">
+          
+          {% if portfolio.data.github_url %}
+          <a href="{{ portfolio.data.github_url }}" class="flex items-center">
+            <i class="icon-[bi--github] text-2xl"></i>
+          </a>
+          {% endif %}
+          
+          {% if portfolio.data.original_url %}
+          <a 
+            href="{{ portfolio.data.original_url }}" 
+            target="_blank" 
+            class="flex items-center border rounded border-gray-500 px-2">
+            {{ portfolio.data.original_url | hostname }}
+          </a>
+          {% endif %}
+
+          {% if portfolio.url %}
+          <a 
+            href="{{portfolio.url}}" 
+            class="flex items-center ms-auto gap-2 border rounded border-gray-500 px-2">
+            <span>Ətraflı</span>
+            <i class="icon-[formkit--arrowright]"></i>
+          </a>
+          {% endif %}
+
+        </footer>
+
+      </article>
+    {% endfor %}
+  </div>
+
+</section>

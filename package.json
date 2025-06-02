@@ -1,0 +1,27 @@
+{
+  "name": "personal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:css && npm run build:static",
+    "build:dev": "npm run build:static:dev && npm run build:css:dev",
+    "build:static:dev": "npx @11ty/eleventy --serve",
+    "build:static": "npx @11ty/eleventy",
+    "build:css:dev": "npx @tailwindcss/cli -i ./src/assets/css/global.css -o ./src/assets/css/style.css --watch",
+    "build:css": "npx @tailwindcss/cli -i ./src/assets/css/global.css -o ./src/assets/css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.0",
+    "@tailwindcss/cli": "^4.1.8",
+    "tailwindcss": "^4.1.8"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@iconify/json": "^2.2.344",
+    "@iconify/tailwind4": "^1.0.6"
+  }
+}
