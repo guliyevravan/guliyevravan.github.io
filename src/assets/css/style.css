@@ -502,6 +502,12 @@
       grid-column: span 6 / span 6;
     }
   }
+  .min-lg\:text-xl {
+    @media (width >= 64rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
 }
 @layer base {
   body {
