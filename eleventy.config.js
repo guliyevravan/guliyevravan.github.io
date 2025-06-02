@@ -1,4 +1,5 @@
 // import { HtmlBasePlugin } from "@11ty/eleventy";
+// import { DateTime } from "luxon";
 
 export default async function (eleventyConfig) {
  
@@ -30,6 +31,11 @@ export default async function (eleventyConfig) {
       return url;
     }
   });
+
+  // eleventyConfig.addDateParsing(function(dateValue) {
+  //   return new Date(dateValue).getHours();
+	// 	// return DateTime.fromFormat(dateValue, "yyyy-MM-dd hh:mm:ss z");
+	// }); 
   
   // eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
@@ -62,7 +68,7 @@ export default async function (eleventyConfig) {
   // eleventyConfig.setDataFileSuffixes([".11tydata", ""]); 
 
   //  Render zamanı yaranan faylları göstərmək
-  eleventyConfig.setQuietMode(false);
+  eleventyConfig.setQuietMode(true);
 
   // eleventyConfig.addPlugin(HtmlBasePlugin);
 

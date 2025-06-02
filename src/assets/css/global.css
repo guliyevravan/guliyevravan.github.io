@@ -7,11 +7,11 @@
   }
 
   h1 {
-    @apply text-4xl font-extrabold;
+    @apply min-sm:text-4xl text-3xl font-extrabold;
   }
 
   h2 {
-    @apply text-3xl font-extrabold mb-3;
+    @apply min-sm:text-3xl text-2xl font-extrabold mb-3;
   }
 
   h3 {
