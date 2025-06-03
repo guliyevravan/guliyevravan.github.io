@@ -1,51 +1,15 @@
-<!DOCTYPE html>
-<html lang="az">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+--- 
+layout: home.html
+---
+<h1>{{ title }}</h1>
 
-  {% if description %}
-  <meta name="description" content="{{ description | escape }}">
-  {% else %}
-  <meta name="description" content="{{ configs.description | escape }}">
-  {% endif %}
+<div class="grid grid-cols-12 gap-4 mb-4">
+  <div class="md:col-span-9 sm:col-span-6 col-span-12 rounded-xl overflow-hidden">
+    <img src="{{ cover }}" class="object-cover size-full">
+  </div>
+  <div class="md:col-span-3 sm:col-span-6 col-span-12">
+    {% include "blog_sidebar.html" %}
+  </div>
+</div>
 
-  <title>{{ title }} | {{ configs.title }}</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
-
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TGKDT9CK');</script>
-  <!-- End Google Tag Manager -->
-  
-</head>
-<body>
-
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGKDT9CK"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  {% include "header.html" %}
-
-  <main class="max-w-7xl mx-auto px-4 mt-4 mb-3">
-
-    <h1>{{ title }}</h1>
-
-    <div class="grid grid-cols-12 gap-4 mb-4">
-      <div class="md:col-span-9 sm:col-span-6 col-span-12 rounded-xl overflow-hidden">
-        <img src="{{ cover }}" class="object-cover size-full">
-      </div>
-      <div class="md:col-span-3 sm:col-span-6 col-span-12">
-        {% include "blog_sidebar.html" %}
-      </div>
-    </div>
-
-    {{ content }}
-  </main>  
-  
-</body>
-</html>
+{{ content }}
