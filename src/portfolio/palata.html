@@ -1,0 +1,62 @@
+---
+layout: home.html
+tags: portfolio
+date: 2020-12-25T10:58:44.276Z
+permalink: '/portfolio/hesablama-palatasi.html'
+name: Azərbaycan Respublikası Hesablama Palatası
+title: Azərbaycan Respublikası Hesablama Palatası
+description: Azərbaycan Respublikası Hesablama Palatasının rəsmi web səhifəsinin hazırlanma mərhələsi
+logo: /assets/img/portfolio/sai_logo.svg
+image: /assets/img/portfolio/hesablama_palatasi.svg
+video: null
+github_url: 'test'
+original_url_title: sai.gov.az
+original_url: https://sai.gov.az
+tech: ['vue', 'nodejs', 'bootstrap']
+---
+
+<div class="flex items-center mb-4 gap-3">
+  <h1 class="mb-0">{{ name }}</h1>
+  <picture class="ms-auto w-10">
+    <img src="{{ logo }}">
+  </picture>
+</div>
+
+<div class="flex items-center gap-3 mb-4">
+
+  {% if github_url %}
+  <a href="{{ github_url }}" target="_blank" class="flex items-center border rounded border-gray-500 px-2 gap-2">
+    <i class="icon-[bi--github]"></i>
+    <span>Github</span>
+  </a>
+  {% endif %}
+
+  {% if original_url_title %}
+  <a 
+    {% if original_url %} href="{{ original_url }}" {% endif %}
+    target="_blank" 
+    class="flex items-center border rounded border-gray-500 px-2 gap-2">
+    <span>{{ original_url_title }}</span>
+    {% if original_url %}
+      <i class="icon-[iconamoon--link-external-bold]"></i>
+    {% endif %}
+  </a>
+  {% endif %}
+</div>
+
+<div class="border p-3 bg-gray-200 rounded-xl border-gray-400">
+
+  <strong class="mb-3 block">İstifadə olunan texnologiyalar</strong>
+  
+  <div class="flex items-center gap-3">
+    
+    {% for technology in technologies %}
+    <div class="flex items-center gap-2 text-xl border rounded-xl px-3 bg-white">
+      <div>{{ technology.name }}</div>
+      <i class="{{ technology.icon }} {{ technology.class }}"></i>
+    </div>
+    {% endfor %}
+    
+  </div>
+
+</div>

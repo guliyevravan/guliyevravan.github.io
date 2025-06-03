@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {% if description %}
+  <meta name="description" content="{{ description | escape }}">
+  {% else %}
+  <meta name="description" content="{{ configs.description | escape }}">
+  {% endif %}
+
   <title>{{ title }} | {{ configs.title }}</title>
   <link rel="stylesheet" href="/assets/css/style.css">
 

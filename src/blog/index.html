@@ -1,6 +1,7 @@
 --- 
 layout: home.html
 title: Bloq
+description: Bloqum vasitəsilə ən son texnoloji yeniliklərdən xəbərdar ola bilərsiniz
 --- 
 
 <h1>Bloq</h1>
@@ -11,13 +12,13 @@ title: Bloq
 
   <article class="md:col-span-4 sm:col-span-6 col-span-12 border border-gray-400 rounded-2xl overflow-hidden bg-gray-100">
 
-    <a href="{{ post.url }}" class="p-3 block bg-white font-extrabold">{{ post.data.title }}</a>
-
-    <picture class="min-sm:grayscale-90 min-sm:hover:grayscale-0 duration-500">
+    <picture>
       <img src="{{ post.data.cover }}">
     </picture>
 
-    <time class="px-3 py-2 block text-sm">
+    <a href="{{ post.url }}" class="p-3 block font-extrabold">{{ post.data.title }}</a>
+
+    <time class="px-3 py-2 block text-sm border-t border-t-gray-400">
       {{ post.data.date | postDate }}
     </time>
 
