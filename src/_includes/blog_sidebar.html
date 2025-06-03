@@ -5,13 +5,18 @@
     {% for portfolio in collections.portfolio %}
 
     <article>
-      <a class="flex items-center gap-3 border border-gray-300 rounded-xl p-2">
-        <div class="w-5">
+      <a class="flex items-center gap-3 border border-gray-300 rounded-xl p-2 hover:border-gray-500">
+
+        {% if portfolio.data.logo %}
+        <div class="w-5 shrink-0">
           <img src="{{ portfolio.data.logo }}">
         </div>
+        {% endif %}
+
         <div class="align-top">
           {{ portfolio.data.name }}
         </div>
+
       </a>
     </article>
 

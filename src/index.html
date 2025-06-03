@@ -77,18 +77,21 @@ title: Əsas səhifə
           </a>
           {% endif %}
           
-          {% if portfolio.data.original_url %}
+          {% if portfolio.data.original_url_title %}
           <a 
-            href="{{ portfolio.data.original_url }}" 
+            {% if portfolio.data.original_url %} href="{{ portfolio.data.original_url }}" {% endif %}
             target="_blank" 
-            class="flex items-center border rounded border-gray-500 px-2">
-            {{ portfolio.data.original_url | hostname }}
+            class="flex items-center border rounded border-gray-500 px-2 gap-2">
+            <span>{{ portfolio.data.original_url_title }}</span>
+            {% if portfolio.data.original_url %}
+              <i class="icon-[iconamoon--link-external-bold]"></i>
+            {% endif %}
           </a>
           {% endif %}
 
           {% if portfolio.url %}
           <a 
-            href="{{portfolio.url}}" 
+            href="{{ portfolio.url }}" 
             class="flex items-center ms-auto gap-2 border rounded border-gray-500 px-2">
             <span>Ətraflı</span>
             <i class="icon-[formkit--arrowright]"></i>
