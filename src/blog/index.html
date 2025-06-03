@@ -1,3 +1,28 @@
 --- 
 layout: home.html
+title: Bloq
 --- 
+
+<h1>Bloq</h1>
+
+<section class="grid grid-cols-12 gap-3 mt-4">
+
+  {% for post in collections.blog %}
+
+  <article class="col-span-4 border rounded-2xl overflow-hidden bg-gray-100">
+
+    <a href="{{ post.url }}" class="p-3 block bg-white">{{ post.data.title }}</a>
+
+    <picture>
+      <img src="{{ post.data.cover }}">
+    </picture>
+
+    <time class="px-3 py-2 block text-sm">
+      {{ post.data.date | postDate }}
+    </time>
+
+  </article>
+
+  {% endfor %}
+
+</section>

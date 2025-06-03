@@ -1,5 +1,5 @@
 export default {
-
+  url: 'https://guliyev.dev',
   title: 'Ravan Guliyev',
   mail: 'ravan@guliyev.dev',
   number: '+994555093993',

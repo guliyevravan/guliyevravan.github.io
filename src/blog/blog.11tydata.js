@@ -1,4 +1,4 @@
-export default {
-  tags: "blog",
+// export default {
+  // tags: ["blog"],
   // layout: "home.html",
-}
+// }

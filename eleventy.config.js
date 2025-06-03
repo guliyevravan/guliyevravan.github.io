@@ -1,5 +1,5 @@
 // import { HtmlBasePlugin } from "@11ty/eleventy";
-// import { DateTime } from "luxon";
+import { DateTime } from "luxon";
 
 export default async function (eleventyConfig) {
  
@@ -9,6 +9,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.setDataDirectory("_data");
   eleventyConfig.setOutputDirectory("_site");
 
+  eleventyConfig.addPassthroughCopy("./src/favicon.ico");
   eleventyConfig.addPassthroughCopy("./src/assets/css/style.css");
   eleventyConfig.addPassthroughCopy("./src/assets/img");
 
@@ -30,6 +31,12 @@ export default async function (eleventyConfig) {
     } catch {
       return url;
     }
+  });
+
+  eleventyConfig.addFilter("postDate", (dateObj) => {
+      return DateTime.fromJSDate(dateObj, {
+          zone: "Asia/Baku",
+      }).setLocale('az').toFormat("dd.MM.yyyy");
   });
 
   // eleventyConfig.addDateParsing(function(dateValue) {
@@ -78,6 +85,10 @@ export default async function (eleventyConfig) {
 	// });
   
 };
+
+// export const config = {
+//   htmlTemplateEngine: "liquid",
+// };
 
 // export const config = {
 // 	pathPrefix: "/my-path/",

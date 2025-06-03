@@ -1,0 +1,20 @@
+<div class="border rounded-xl bg-gray-100 p-3 h-full">
+  <h3>İşlərim</h3>
+
+  <div class="flex flex-col gap-2">
+    {% for portfolio in collections.portfolio %}
+
+    <article>
+      <a class="flex items-center gap-3 border border-gray-300 rounded-xl p-2">
+        <div class="w-5">
+          <img src="{{ portfolio.data.logo }}">
+        </div>
+        <div class="align-top">
+          {{ portfolio.data.name }}
+        </div>
+      </a>
+    </article>
+
+    {% endfor %}
+  </div>
+</div>
