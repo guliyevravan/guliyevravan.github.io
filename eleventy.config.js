@@ -8,10 +8,10 @@ export default async function (eleventyConfig) {
   eleventyConfig.setLayoutsDirectory("_layouts");
   eleventyConfig.setDataDirectory("_data");
   eleventyConfig.setOutputDirectory("_site");
-
-  eleventyConfig.addPassthroughCopy("./src/favicon.ico");
+ 
+  // eleventyConfig.addPassthroughCopy("./src/favicon.ico");
   eleventyConfig.addPassthroughCopy("./src/assets/css/style.css");
-  eleventyConfig.addPassthroughCopy("./src/assets/img");
+  // eleventyConfig.addPassthroughCopy("./src/assets/img");
 
   eleventyConfig.addFilter('numberFormat', number => {
     
@@ -19,25 +19,25 @@ export default async function (eleventyConfig) {
     const operator  = number.slice(4, 6);
     const digit1    = number.slice(6, 9);
     const digit2    = number.slice(9, 11);
-    const digit3    = number.slice(11, 13);
+    const digit3    = number.slice(11, 13); 
 
     return (`${country} ${operator} ${digit1} ${digit2} ${digit3}`);
 
   });
 
-  eleventyConfig.addFilter("hostname", url => {
-    try {
-      return new URL(url).hostname.replace(/^www\./, "");
-    } catch {
-      return url;
-    }
-  });
+  // eleventyConfig.addFilter("hostname", url => {
+  //   try {
+  //     return new URL(url).hostname.replace(/^www\./, "");
+  //   } catch {
+  //     return url;
+  //   }
+  // });
 
-  eleventyConfig.addFilter("postDate", (dateObj) => {
-      return DateTime.fromJSDate(dateObj, {
-          zone: "Asia/Baku",
-      }).setLocale('az').toFormat("dd.MM.yyyy");
-  });
+  // eleventyConfig.addFilter("postDate", (dateObj) => {
+  //     return DateTime.fromJSDate(dateObj, {
+  //         zone: "Asia/Baku",
+  //     }).setLocale('az').toFormat("dd.MM.yyyy");
+  // });
 
   // eleventyConfig.addDateParsing(function(dateValue) {
   //   return new Date(dateValue).getHours();

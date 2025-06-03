@@ -1,0 +1,44 @@
+---
+layout: base.njk
+title: Əsas səhifə
+description: Hər növ web saytların hazırlanması. Freelance web developer olaraq, 
+  işinizi internetdə ən yaxşı təmsil edən, sürətli və cəzbedici saytlar hazırlayıram.
+---
+
+<h1>Full Stack Web Developer</h1>
+
+<section class="grid grid-cols-12 gap-4 mt-4 min-sm:text-lg! text-base!">
+
+  <div class="md:col-span-6 col-span-12 border border-gray-400 rounded-xl p-3 bg-gray-100 flex items-center gap-2">
+    <div class="flex flex-col">
+      <span>Bakı</span>
+      <span>Azərbaycan</span>
+    </div>
+    <span 
+      class="icon-[openmoji--location-indicator] min-sm:text-4xl! text-3xl! ms-auto"></span>
+  </div>
+
+  <div class="md:col-span-6 col-span-12 border border-gray-400 rounded-xl p-3 bg-gray-100">
+    <div class="flex items-center w-full gap-2">
+      <a 
+        class="flex items-center gap-2 underline decoration-slate-500 underline-offset-4 min-sm:hover:decoration-slate-700" 
+        href="tel:{{ configs.number }}">
+        <i class="icon-[carbon--phone-filled] text-slate-500"></i>
+        <span>{{ configs.number | numberFormat }}</span>
+      </a>
+      <a 
+        href="https://wa.me/{{ configs.number }}?text={{ configs.whatsapp_message }}"
+        target="_blank"
+        class="flex flex-nowrap items-center border border-black bg-green-300 rounded-sm text-sm px-2 gap-1 ms-auto">
+        <i class="icon-[nimbus--whatsapp]"></i>
+        <span>Whatsapp'da yaz</span>
+      </a>
+    </div>
+    <a 
+      href="mailto:{{ configs.email }}" 
+      class="flex items-center gap-2 underline decoration-slate-500 underline-offset-4 min-sm:hover:decoration-slate-700">
+      <i class="icon-[material-symbols--mail]  text-slate-500" style="width: 1.2em; height: 1.2em;"></i>
+      <span>{{ configs.email }}</span>
+    </a>
+  </div>
+</section>

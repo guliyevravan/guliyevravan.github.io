@@ -1,5 +1,5 @@
 ---
-layout: home.html
+layout: home.njk
 tags: portfolio
 date: 2022-10-21T14:58:44.276Z
 permalink: false
