@@ -15,7 +15,7 @@
       <a 
         href="{{ link or '#' }}"
         target="{% if link and link == portfolio.data.url %}_blank{% else %}_self{% endif %}"
-        class="flex items-center gap-3 border border-gray-300 rounded-xl p-2 hover:border-gray-500">
+        class="flex items-center gap-3 border border-transparent rounded-sm p-1 hover:border-gray-400 active:ring-1">
 
         {% if logo %}
         <div class="w-5 shrink-0">
