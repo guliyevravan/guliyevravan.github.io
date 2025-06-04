@@ -1,0 +1,28 @@
+{% macro blogCard(post, wrapperTag = 'article', wrapperClass = '') %}
+
+{% set title        = post.data.title %}
+{% set description  = post.data.description %}
+{% set cover        = post.data.cover %}
+
+<{{wrapperTag}} 
+  class="{{wrapperClass}} border rounded-xl hover:ring-1 ring-slate-400 active:ring-black 
+  border-gray-400 bg-gray-100 h-full flex flex-col overflow-hidden">
+
+<a href="{{ post.url }}">
+
+  <div class="p-3">
+    <h2 class="text-lg font-medium mb-1!">{{ title }}</h2>
+    <p class="text-sm">{{ description }}</p>
+  </div>
+  
+  <picture class="aspect-[1/2]">
+    <img src="{{ cover }}" alt="{{ title }}">
+  </picture>
+
+</a>
+<footer class="p-3">
+  <time class="text-sm">{{ post.date | postDate }}</time>
+</footer>
+</{{wrapperTag}}>
+
+{% endmacro %}

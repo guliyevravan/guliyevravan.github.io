@@ -25,19 +25,11 @@ export default async function (eleventyConfig) {
 
   });
 
-  // eleventyConfig.addFilter("hostname", url => {
-  //   try {
-  //     return new URL(url).hostname.replace(/^www\./, "");
-  //   } catch {
-  //     return url;
-  //   }
-  // });
-
-  // eleventyConfig.addFilter("postDate", (dateObj) => {
-  //     return DateTime.fromJSDate(dateObj, {
-  //         zone: "Asia/Baku",
-  //     }).setLocale('az').toFormat("dd.MM.yyyy");
-  // });
+  eleventyConfig.addFilter("postDate", (dateObj) => {
+      return DateTime.fromJSDate(dateObj, {
+          zone: "Asia/Baku",
+      }).setLocale('az').toFormat("dd.MM.yyyy");
+  });
 
   // eleventyConfig.addDateParsing(function(dateValue) {
   //   return new Date(dateValue).getHours();
