@@ -1,0 +1,20 @@
+---
+layout: base.njk
+---
+<h1>{{ title }}</h1>
+
+<section class="grid grid-cols-12 gap-3 mb-4">
+  
+  <div class="col-span-9 aspect-[2/1] rounded-xl overflow-hidden border border-gray-400 shadow-2xs">
+    <img src="{{ cover }}" alt="{{title}}" class="object-cover">
+  </div> 
+
+  <div class="col-span-3">
+    
+    {% include "components/blog_sidebar.njk" %}
+
+  </div>
+
+</section>
+
+{{ content | safe }}

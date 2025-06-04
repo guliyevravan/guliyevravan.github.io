@@ -1,0 +1,33 @@
+<div class="border border-gray-400 rounded-xl bg-gray-100 p-3 h-full">
+  
+  <h3>İşlərim</h3>
+
+  <div class="flex flex-col gap-2">
+
+    {% for portfolio in collections.portfolio %}
+
+    {% set link =  portfolio.url or portfolio.data.url or false %}
+
+    <article>
+
+      <a 
+        href="{{ link or '#' }}"
+        target="{% if link and link == portfolio.data.url %}_blank{% else %}_self{% endif %}"
+        class="flex items-center gap-3 border border-gray-300 rounded-xl p-2 hover:border-gray-500">
+
+        {% if portfolio.data.logo %}
+        <div class="w-5 shrink-0">
+          <img src="{{ portfolio.data.logo }}">
+        </div>
+        {% endif %}
+
+        <div class="align-top sm:text-sm text-xs">
+          {{ portfolio.data.name }}
+        </div>
+
+      </a>
+    </article>
+
+    {% endfor %}
+  </div>
+</div>
