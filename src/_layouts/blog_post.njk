@@ -5,11 +5,11 @@ layout: base.njk
 
 <section class="grid grid-cols-12 gap-3 mb-4">
   
-  <div class="col-span-9 aspect-[2/1] rounded-xl overflow-hidden border border-gray-400 shadow-2xs">
+  <div class="lg:col-span-9 md:col-span-6 col-span-12 aspect-[2/1] rounded-xl overflow-hidden border border-gray-400 shadow-2xs">
     <img src="{{ cover }}" alt="{{title}}" class="size-full object-cover">
   </div> 
 
-  <div class="col-span-3">
+  <div class="lg:col-span-3 md:col-span-6 col-span-12">
     
     {% include "components/blog_sidebar.njk" %}
 
