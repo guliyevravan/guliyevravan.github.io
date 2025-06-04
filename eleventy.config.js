@@ -79,6 +79,41 @@ export default async function (eleventyConfig) {
     // console.log(content);
     // console.log(this.page);
 	// });
+
+  //  permalink /ad/ yerine /ad yazanda error vermemesi
+  // eleventyConfig.configureErrorReporting({ allowMissingExtensions: true })
+
+  // Set global permalinks to resource.html style
+    // eleventyConfig.addGlobalData("permalink", () => {
+    // 	return (data) =>
+    // 		`${data.page.filePathStem}.${data.page.outputFileExtension}`;
+    // });
+
+	// Remove .html from `page.url`
+	// eleventyConfig.addUrlTransform((page) => {
+	// 	if (page.url.endsWith(".html")) {
+	// 		return page.url.slice(0, -1 * ".html".length);
+	// 	}
+	// });
+
+  // eleventyConfig.addUrlTransform((page) => {
+	// 	// remove trailing slash from `page.url`
+	// 	if (page.url !== "/" && page.url.endsWith("/")) {
+	// 		return page.url.slice(0, -1);
+	// 	}
+	// });
+
+  // Dynamic permalinks are enabled by default
+	// eleventyConfig.setDynamicPermalinks(false);
+
+  // eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
+
+  // eleventyConfig.addCollection("myCollectionName", async (collectionsApi) => {
+
+  //   // console.log(collectionsApi.getAll());
+	// 	// get unsorted items
+	// 	// return collectionsApi.getAll();
+	// });
   
 };
 
