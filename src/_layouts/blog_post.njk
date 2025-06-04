@@ -3,6 +3,11 @@ layout: base.njk
 ---
 <h1>{{ title }}</h1>
 
+<time datetime="{{ date.toISOString() }}" class="mb-1 flex items-center gap-2 text-sm">
+  <i class="icon-[uiw--date]"></i>
+  <span>{{ date | postDate }}</span>
+</time>
+
 <section class="grid grid-cols-12 gap-3 mb-4">
   
   <div class="lg:col-span-9 md:col-span-6 col-span-12 aspect-[2/1] rounded-xl overflow-hidden border border-gray-400 shadow-2xs">

@@ -31,6 +31,10 @@ export default async function (eleventyConfig) {
       }).setLocale('az').toFormat("dd.MM.yyyy");
   });
 
+  eleventyConfig.addFilter("collapseWhitespace", str => {
+    return str.replace(/\s+/g, ' ').trim();
+  });
+
   // eleventyConfig.addDateParsing(function(dateValue) {
   //   return new Date(dateValue).getHours();
 	// 	// return DateTime.fromFormat(dateValue, "yyyy-MM-dd hh:mm:ss z");

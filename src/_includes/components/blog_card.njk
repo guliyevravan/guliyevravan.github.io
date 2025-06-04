@@ -3,6 +3,7 @@
 {% set title        = post.data.title %}
 {% set description  = post.data.description %}
 {% set cover        = post.data.cover %}
+{% set date         = post.date %}
 
 <{{wrapperTag}} 
   class="{{wrapperClass}} border rounded-xl hover:ring-1 ring-slate-400 active:ring-black 
@@ -19,10 +20,15 @@
     <img src="{{ cover }}" alt="{{ title }}">
   </picture>
 
+  <footer class="p-3">
+    <time datetime="{{ date.toISOString() }}" class="text-sm flex items-center gap-2">
+      <i class="icon-[uiw--date]"></i>
+      <span>{{ date | postDate }}</span>
+    </time>
+  </footer>
+
 </a>
-<footer class="p-3">
-  <time class="text-sm">{{ post.date | postDate }}</time>
-</footer>
+
 </{{wrapperTag}}>
 
 {% endmacro %}
