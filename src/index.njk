@@ -1,9 +1,10 @@
----
+---  
 layout: base.njk
 title: Əsas səhifə
 description: Hər növ web saytların hazırlanması. Freelance web developer olaraq, 
   işinizi internetdə ən yaxşı təmsil edən, sürətli və cəzbedici saytlar hazırlayıram.
 ---
+{% from "components/portfolio_card.njk" import post as portfolioCard %}
 
 <h1>Full Stack Web Developer</h1>
 
@@ -12,7 +13,7 @@ description: Hər növ web saytların hazırlanması. Freelance web developer ol
   <div class="md:col-span-6 col-span-12 border border-gray-400 rounded-xl p-3 bg-gray-100 flex items-center gap-2">
     <div class="flex flex-col gap-1">
       <span>Bakı</span>
-      <span>Azərbaycan</span>
+      <span>Azərbaycan</span> 
     </div>
     <span 
       class="icon-[openmoji--location-indicator] min-sm:text-4xl! text-3xl! ms-auto"></span>
@@ -51,11 +52,9 @@ description: Hər növ web saytların hazırlanması. Freelance web developer ol
 
   <div class="grid grid-cols-12 gap-3">
     {% for portfolio in collections.portfolio %}
-    <article class="lg:col-span-3 md:col-span-4 sm:col-span-4 col-span-6 border border-gray-400 p-3 rounded-xl bg-gray-100 h-full flex flex-col">
-     
-    {# {% include "components/card.njk", {
-      name: 'sajksja',
-    } %} #}
+    <article class="lg:col-span-3 md:col-span-4 xs:col-span-6 col-span-12 border hover:ring-1 ring-slate-400 active:ring-black border-gray-400 p-3 rounded-xl bg-gray-100 h-full flex flex-col">
+
+      {{ portfolioCard(portfolio) }}
 
     </article>
     {% endfor %}

@@ -7,7 +7,7 @@
 @layer base {
 
   body {
-    @apply bg-white;
+    @apply bg-white; 
   }
 
   h1 {
@@ -15,7 +15,7 @@
   }
 
   h2 {
-    @apply min-sm:text-3xl text-xl font-extrabold mb-3;
+    @apply min-sm:text-3xl text-xl font-extrabold mb-4;
   }
 
   h3 {

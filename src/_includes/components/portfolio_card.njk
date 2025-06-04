@@ -1,0 +1,72 @@
+{% macro post(portfolio) %}
+
+{% set link     = portfolio.url or portfolio.data.url or false %}
+
+{% set name     = portfolio.data.name %}
+{% set logo     = portfolio.data.logo %}
+{% set cover    = portfolio.data.cover %}
+{% set github   = portfolio.data.github %}
+{% set url_name = portfolio.data.url_name %}
+
+
+<header class="flex items-top">
+  
+  <a 
+    href="{{ link or '#' }}"
+    target="{% if link and link == portfolio.data.url %}_blank{% else %}_self{% endif %}"
+    class="text-lg font-medium {% if link %} underline underline-offset-4 {% endif %}"
+    {% if not link %}aria-disabled="true"{% endif %}
+    > 
+    {{ name }}
+  </a>
+  
+  {% if logo %}
+  <picture class="ms-auto w-10 shrink-0">
+    <img src="{{ logo }}">
+  </picture>
+  {% endif %}
+
+</header>
+
+<picture class="aspect-square mt-auto">
+  {% if cover %}
+  <img 
+    src="{{ cover }}" 
+    alt="{{ name }}" 
+    class="object-cover">
+  {% endif %}
+</picture>
+
+<footer class="flex flex-wrap items-center gap-2">
+
+  {% if github %}
+  <a href="{{ github }}" target="_blank" class="flex items-center">
+    <i class="icon-[bi--github] text-2xl"></i>
+  </a> 
+  {% endif %}
+
+  {% if url_name %}
+  <a 
+    href="{{ portfolio.data.url or '#' }}" 
+    {% if portfolio.data.url %}target="_blank"{% endif %}
+    class="flex items-center gap-2 border border-slate-500 rounded-sm px-2 active:ring-1">
+    {{ url_name }}
+    {% if portfolio.data.url %}
+    <i class="icon-[mynaui--external-link-solid]"></i>
+    {% endif %}
+  </a>
+  {% endif %}
+  
+  {% if portfolio.url %}
+  <a 
+    href="{{ portfolio.url }}" 
+    target="_blank" 
+    class="flex items-center gap-2 border border-slate-500 rounded-sm px-2 active:ring-1">
+    Ətraflı
+    <i class="icon-[cuida--arrow-right-outline]"></i>
+  </a>  
+  {% endif %}
+
+</footer>
+
+{% endmacro %} 
