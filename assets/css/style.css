@@ -198,14 +198,8 @@
   }
 }
 @layer utilities {
-  .col-span-3 {
-    grid-column: span 3 / span 3;
-  }
   .col-span-6 {
     grid-column: span 6 / span 6;
-  }
-  .col-span-9 {
-    grid-column: span 9 / span 9;
   }
   .col-span-12 {
     grid-column: span 12 / span 12;
@@ -875,6 +869,11 @@
   .lg\:col-span-4 {
     @media (width >= 64rem) {
       grid-column: span 4 / span 4;
+    }
+  }
+  .lg\:col-span-9 {
+    @media (width >= 64rem) {
+      grid-column: span 9 / span 9;
     }
   }
 }
