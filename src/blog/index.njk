@@ -9,7 +9,7 @@ description: Bloqum vasitəsilə ən son texnoloji yeniliklərdən xəbərdar ol
 
 <section class="grid grid-cols-12 gap-3">
 
-  {% for post in collections.blog | slice(0, 1) %}
+  {% for post in collections.blog %}
     {{ blogCard(post, wrapperClass='lg:col-span-4 md:col-span-4 sm:col-span-6 col-span-12') }}
   {% endfor %}
 

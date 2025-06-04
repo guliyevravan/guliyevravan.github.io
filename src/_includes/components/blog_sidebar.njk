@@ -7,6 +7,8 @@
     {% for portfolio in collections.portfolio %}
 
     {% set link =  portfolio.url or portfolio.data.url or false %}
+    {% set name =  portfolio.data.name %}
+    {% set logo =  portfolio.data.logo %}
 
     <article>
 
@@ -15,14 +17,14 @@
         target="{% if link and link == portfolio.data.url %}_blank{% else %}_self{% endif %}"
         class="flex items-center gap-3 border border-gray-300 rounded-xl p-2 hover:border-gray-500">
 
-        {% if portfolio.data.logo %}
+        {% if logo %}
         <div class="w-5 shrink-0">
-          <img src="{{ portfolio.data.logo }}">
+          <img src="{{ logo }}">
         </div>
         {% endif %}
 
         <div class="align-top sm:text-sm text-xs">
-          {{ portfolio.data.name }}
+          {{ name }}
         </div>
 
       </a>
