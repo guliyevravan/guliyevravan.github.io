@@ -225,6 +225,9 @@
   .mb-0 {
     margin-bottom: calc(var(--spacing) * 0);
   }
+  .mb-1\! {
+    margin-bottom: calc(var(--spacing) * 1) !important;
+  }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
   }
@@ -458,6 +461,9 @@
     display: grid;
   }
   .aspect-1\/2 {
+    aspect-ratio: 1/2;
+  }
+  .aspect-\[1\/2\] {
     aspect-ratio: 1/2;
   }
   .aspect-square {
@@ -828,6 +834,11 @@
   .lg\:col-span-3 {
     @media (width >= 64rem) {
       grid-column: span 3 / span 3;
+    }
+  }
+  .lg\:col-span-4 {
+    @media (width >= 64rem) {
+      grid-column: span 4 / span 4;
     }
   }
 }
