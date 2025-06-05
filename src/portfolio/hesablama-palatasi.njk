@@ -3,18 +3,56 @@ layout: portfolio_post.njk
 tags: portfolio
 name: Azərbaycan Respublikası Hesablama Palatası
 title: Azərbaycan Respublikası Hesablama Palatası
+description: Azərbaycan Respublikası Hesablama Palatasının rəsmi veb səhisənin hazırlanma mərhələsi
 permalink: /portfolio/hesablama-palatasi/
 cover: /assets/img/portfolio/hesablama_palatasi.svg
 logo: /assets/img/portfolio/sai_logo.svg
 url_name: sai.gov.az
 url: https://sai.gov.az
-github: 'https://github.com'
+github: null
 technologies: 
   - vue
   - nodejs
   - mysql
   - bootstrap
-  - html
-  - css
-  - tailwind
+  #- html
+  #- css
+  #- tailwind
 ---
+
+<p>
+  Bu gün sizə Hesablama Palatasının rəsmi veb səhifəsi haqqında məlumat verəcəm. 
+  Hesablama Palatası Milli Məclis tərəfindən yaradılan, Azərbaycanın Ali Audit Qurumudur. 
+  Saytın həm <strong>frontend (Vue)</strong> həm də <strong>backend (Nodejs)</strong> hissəsi mənim tərəfimdən hazırlanmışdır
+</p>
+
+<p></p>
+
+<p></p>
+
+<h2>Frontend</h2>
+<p>
+  Sayt tamamilə SPA (Single Page Application) texnologiyasıdır. Saytda bootstrap ilə paralel olaraq bəzi hissələrdə 
+  native css də istifadə edilib. 
+</p> 
+<p>İstifadə edilən modullar</p>
+<ul>
+  <li>Vue Router</li>
+  <li>Vuex</li>
+  <li>Axios</li>
+</ul>
+
+<h2 class="mt-3">Backend</h2>
+<p>
+  Backend RestfulAPI arxitekturasını təmin edir. Hər bir Request (sorğu) üçün router-lar bölünüb və hər biri üçün 
+  controller, modellər tətbiq olunub. 
+</p> 
+<p>İstifadə edilən modullar</p>
+<ul>
+  <li>Express</li>
+  <li>Nodemailer</li>
+  <li>Multer</li>
+  <li>Jsonwebtoken</li>
+  <li>Bcryptjs</li>
+
+</ul>

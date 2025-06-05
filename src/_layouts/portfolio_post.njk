@@ -6,13 +6,39 @@ layout: base.njk
   <h1 class="mb-0">{{title}}</h1>
 
   {% if logo %}
-  <picture class="w-10 ms-auto">
+  <picture class="w-10 shrink-0 ms-auto">
     <img src="{{logo}}" alt="{{ title | escape }}}">
   </picture>
   {% endif %}
 </header>
 
-<div class="flex items-center gap-2 flex-wrap bg-gray-100 border border-gray-400 rounded-xl p-4"> 
+<section class="mb-4 flex gap-3">
+
+  {% if github %}
+  <a 
+    href="{{ github }}" 
+    target="_blank" 
+    class="flex items-center gap-2 border border-slate-500 rounded-sm px-2 active:ring-1">
+    <i class="icon-[bi--github]"></i>
+    Github
+  </a> 
+  {% endif %}
+
+  {% if url_name %}
+  <a 
+    href="{{ url or '#' }}" 
+    {% if url %}target="_blank"{% endif %}
+    class="flex items-center gap-2 border border-slate-500 rounded-sm px-2 active:ring-1">
+    {{ url_name }}
+    {% if url %}
+    <i class="icon-[mynaui--external-link-solid]"></i>
+    {% endif %}
+  </a>
+  {% endif %}
+
+</section>
+
+<section class="flex items-center gap-2 flex-wrap bg-gray-100 border border-gray-400 rounded-xl p-4 mb-4"> 
 
   {% for technology_code in technologies %}
 
@@ -30,4 +56,6 @@ layout: base.njk
   </div>
   {% endfor %}
 
-</div>
+</section>
+
+{{ content | safe }}
