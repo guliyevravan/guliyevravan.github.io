@@ -1,4 +1,33 @@
 ---
 layout: base.njk
 ---
-<h1>{{title}}</h1>
+<header class="flex items-center gap-3 mb-4">
+
+  <h1 class="mb-0">{{title}}</h1>
+
+  {% if logo %}
+  <picture class="w-10 ms-auto">
+    <img src="{{logo}}" alt="{{ title | escape }}}">
+  </picture>
+  {% endif %}
+</header>
+
+<div class="flex items-center gap-2 flex-wrap bg-gray-100 border border-gray-400 rounded-xl p-4"> 
+
+  {% for technology_code in technologies %}
+
+  {% set technology = all_technologies[technology_code] or false %}
+
+  <div class="flex items-center border px-2 py-1 rounded-sm gap-2 bg-white {{ technology.class }}">
+    
+    {% if(technology) %}
+    <span class="flex items-center">{{ technology.icon | safe }}</span>
+    <span>{{ technology.name }}</span>
+    {% else %}
+    <span>{{ technology_code }}</span>
+    {% endif %}
+
+  </div>
+  {% endfor %}
+
+</div>

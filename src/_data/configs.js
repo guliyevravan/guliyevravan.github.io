@@ -7,6 +7,5 @@ export default {
   instagram: 'https://www.instagram.com/guliyev.ravan/',
   number: '+994555093993',
   whatsapp_message: `Salam. Veb sayta ehtiyacım var. Ətraflı məlumat verə bilərsinizmi?`,
-  email: 'ravan@guliyev.dev',
-  
+  email: 'ravan@guliyev.dev',  
 }
