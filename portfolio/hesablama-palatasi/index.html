@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta 
     name="description" 
-    content="Hər növ web saytların hazırlanması. Freelance web developer olaraq, işinizi internetdə ən yaxşı təmsil edən, sürətli və cəzbedici saytlar hazırlayıram.">
+    content="Azərbaycan Respublikası Hesablama Palatasının rəsmi veb səhisənin hazırlanma mərhələsi">
   <title>Azərbaycan Respublikası Hesablama Palatası | Ravan Guliyev</title>
 
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -67,13 +67,31 @@
   <h1 class="mb-0">Azərbaycan Respublikası Hesablama Palatası</h1>
 
   
-  <picture class="w-10 ms-auto">
+  <picture class="w-10 shrink-0 ms-auto">
     <img src="/assets/img/portfolio/sai_logo.svg" alt="Azərbaycan Respublikası Hesablama Palatası}">
   </picture>
   
 </header>
 
-<div class="flex items-center gap-2 flex-wrap bg-gray-100 border border-gray-400 rounded-xl p-4"> 
+<section class="mb-4 flex gap-3">
+
+  
+
+  
+  <a 
+    href="https://sai.gov.az" 
+    target="_blank"
+    class="flex items-center gap-2 border border-slate-500 rounded-sm px-2 active:ring-1">
+    sai.gov.az
+    
+    <i class="icon-[mynaui--external-link-solid]"></i>
+    
+  </a>
+  
+
+</section>
+
+<section class="flex items-center gap-2 flex-wrap bg-gray-100 border border-gray-400 rounded-xl p-4 mb-4"> 
 
   
 
@@ -125,43 +143,45 @@
   </div>
   
 
-  
+</section>
 
-  <div class="flex items-center border px-2 py-1 rounded-sm gap-2 bg-white text-orange-700 border-orange-700">
-    
-    
-    <span class="flex items-center"><i class="icon-[flowbite--html-solid]"></i></span>
-    <span>HTML</span>
-    
 
-  </div>
-  
+<p>
+  Bu gün sizə Hesablama Palatasının rəsmi veb səhifəsi haqqında məlumat verəcəm. 
+  Hesablama Palatası Milli Məclis tərəfindən yaradılan, Azərbaycanın Ali Audit Qurumudur. 
+  Saytın həm <strong>frontend (Vue)</strong> həm də <strong>backend (Nodejs)</strong> hissəsi mənim tərəfimdən hazırlanmışdır
+</p>
 
-  
+<p></p>
 
-  <div class="flex items-center border px-2 py-1 rounded-sm gap-2 bg-white text-blue-700 border-blue-700">
-    
-    
-    <span class="flex items-center"><i class="icon-[flowbite--css-solid]"></i></span>
-    <span>CSS</span>
-    
+<p></p>
 
-  </div>
-  
+<h2>Frontend</h2>
+<p>
+  Sayt tamamilə SPA (Single Page Application) texnologiyasıdır. Saytda bootstrap ilə paralel olaraq bəzi hissələrdə 
+  native css də istifadə edilib. 
+</p> 
+<p>İstifadə edilən modullar</p>
+<ul>
+  <li>Vue Router</li>
+  <li>Vuex</li>
+  <li>Axios</li>
+</ul>
 
-  
+<h2 class="mt-3">Backend</h2>
+<p>
+  Backend RestfulAPI arxitekturasını təmin edir. Hər bir Request (sorğu) üçün router-lar bölünüb və hər biri üçün 
+  controller, modellər tətbiq olunub. 
+</p> 
+<p>İstifadə edilən modullar</p>
+<ul>
+  <li>Express</li>
+  <li>Nodemailer</li>
+  <li>Multer</li>
+  <li>Jsonwebtoken</li>
+  <li>Bcryptjs</li>
 
-  <div class="flex items-center border px-2 py-1 rounded-sm gap-2 bg-white text-cyan-600 border-cyan-600">
-    
-    
-    <span class="flex items-center"><i class="icon-[ri--tailwind-css-fill]"></i></span>
-    <span>Tailwind</span>
-    
-
-  </div>
-  
-
-</div>
+</ul>
   </main>
 
 </body>
