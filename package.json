@@ -22,6 +22,7 @@
   },
   "type": "module",
   "devDependencies": {
+    "@iconify-json/dinkie-icons": "^1.2.0",
     "@iconify/json": "^2.2.344",
     "@iconify/tailwind4": "^1.0.6"
   }
