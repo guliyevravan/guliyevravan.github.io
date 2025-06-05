@@ -64,3 +64,25 @@ technologies:
   <li>Bcryptjs</li>
 
 </ul>
+
+{# <div class="glide">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <li class="glide__slide">0</li>
+      <li class="glide__slide" data-glide-autoplay="6000">1</li>
+      <li class="glide__slide">2</li>
+    </ul>
+  </div>
+</div> #}
+
+{% block scripts %}
+  {# <script src="https://unpkg.com/@glidejs/glide@3.7.1/dist/glide.js"></script>
+  <script>
+    console.log(Glide);
+    new Glide('.glide', {
+      type: 'carousel',
+      startAt: 0,
+      perView: 3
+    }).mount()
+  </script> #}
+{% endblock %}
