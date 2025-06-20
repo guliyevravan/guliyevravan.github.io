@@ -33,5 +33,21 @@ export default {
     name: 'CSS',
     icon: `<i class="icon-[flowbite--css-solid]"></i>`,
     class: `text-blue-700 border-blue-700`,
-  }
+  },
+  vuetify: {
+    name: 'Vuetify',
+    icon: `<i class="icon-[devicon--vuetify]"></i>`,
+    class: `text-blue-800 border-blue-800`,
+  },
+  socket_io: {
+    name: 'Socket.IO',
+    icon: `<i class="icon-[devicon--socketio]"></i>`,
+    class: ``
+  },
+  cordova: {
+    name: 'Cordova',
+    icon: `<i class="icon-[file-icons--cordova]"></i>`,
+    class: `text-slate-800 border-slate-800`
+  },
+  
 }
