@@ -10,4 +10,8 @@
     /* @apply flex! items-center!; */
   }
 
+  .swiper-lazy-preloader{
+    --swiper-theme-color: var(--color-gray-500);
+  }
+
 }
