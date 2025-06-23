@@ -263,9 +263,6 @@
         <!-- If we need pagination -->
         <div class="swiper-pagination"></div>
 
-        <!-- If we need navigation buttons --> 
-        
-        
         <button class="swiper-custom-prev absolute top-1/2 start-5 z-3 bg-gray-100/90 flex items-center py-4 px-2 rounded-xl border border-slate-400 -translate-y-1/2">
           <span class="icon-[solar--map-arrow-left-bold-duotone] text-3xl text-slate-700"></span>
         </button>
@@ -274,7 +271,7 @@
         </button>
 
         <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
+        
         
       </div>
     </div>
@@ -296,7 +293,7 @@
 
   for (const name of breakpointNames) {
     const remValue = parseFloat(getComputedStyle(document.documentElement).getPropertyValue(`--breakpoint-${name}`));
-    breakpoints[name] = remValue * 16; // rem to px
+    breakpoints[name] = remValue * 16;
   }
   
   const swiper = new Swiper('.swiper', {
@@ -323,8 +320,8 @@
 
     // Navigation arrows
     navigation: { 
-      nextEl: '.swiper-custom-prev',
-      prevEl: '.swiper-custom-next',
+      nextEl: '.swiper-custom-next',
+      prevEl: '.swiper-custom-prev',
     },
 
     // And if we need scrollbar
