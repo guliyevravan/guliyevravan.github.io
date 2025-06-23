@@ -6,6 +6,14 @@
 
 @layer base {
 
+  :root {
+    --breakpoint-sm: theme(screens.sm);
+    --breakpoint-md: theme(screens.md);
+    --breakpoint-lg: theme(screens.lg);
+    --breakpoint-xl: theme(screens.xl);
+    --breakpoint-2xl: theme(screens.2xl);
+  }
+
   body {
     @apply bg-white; 
   }
@@ -31,6 +39,8 @@
   }
   
 }
+
+@import "./swiper.css";
 
 @plugin "@iconify/tailwind4" {
  prefixes: mdi-light, vscode-icons, mynaui;

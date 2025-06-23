@@ -1,14 +1,14 @@
 ---
-layout: portfolio_post.njk
 tags: portfolio
+date: 2019-12-12T18:04:00.123Z
 name: Mozo - Tanışlıq tətbiqetməsi
 title: Mozo - Tanışlıq tətbiqetməsi
 description: İnsanların bir-biri ilə rahat şəkildə tanış olması üçün yaratdığım proqram
 permalink: /portfolio/mozo/
 cover: /assets/img/portfolio/mozo/cover.svg
 logo: /assets/img/portfolio/mozo/logo.svg
-url_name: apkpure.com
-url: https://apkpure.com/mozo-yeni-insanlarla-tan%C4%B1%C5%9F-olun/com.guliyevravan.mozo
+#url_name: apkpure.com
+#url: https://apkpure.com/mozo-yeni-insanlarla-tan%C4%B1%C5%9F-olun/com.guliyevravan.mozo
 github: null
 technologies: 
   - vue  
@@ -19,3 +19,152 @@ technologies:
   - vuetify
   - bootstrap
 ---
+{% extends './../_layouts/portfolio_post.njk' %}
+
+{% block content %}
+{{ super() }}
+
+<p>
+  Salam. Github repolarımı qarışdırarkən illər əvvəl hazırladığım, Mozo adını 
+  verdiyim application ilə qarşılaşdım 🙂 Həmin ərəfələrdə heç bir freelancer işim olmadığı 
+  üçün və <b>Socket.IO</b> ilə təcrübə qazanmaq üçün belə bir app yaratmaq qərarına gəldim.
+</p>
+
+<p>
+  Təbiki bir Web developer olaraq <b>Cordova</b>ya yönəldim. Açığı həmin vaxtlar işimi yetərincə görmüşdü. 
+  O vaxtlar ən böyük problem istifadəçilərə bildiriş göndərmək məsələsi idi. Onu da birtəhər həll 
+  etməyi bacarmışdım.
+</p>
+
+<p>
+  <b>Vuetify</b> ilə də ilk tanışlığım bu application sayəsində olub. Düzdür hal-hazırda istifadə etmirəm, amma 
+  xatırladığım qədərilə vaxt cəhətdən çox işimə yaramışdı. Öyrənmək üçün documentation-ı tam oxuyub bitirmişdim. 
+  Maraqlıydı, amma təəssüf ki artıq Vuetify məni cəzb etməyi bacarmır.
+</p>
+
+<p>
+  Bir müddət istifadə etdikdən sonra bu işdən sıxılaraq backendi bağlamaq qərarına gəlmişdim. 
+  Mənim üçün böyük təcrübə idi. Socket məntiqini demək olar ki, həmin vaxtlar daha yaxşı qavramışdım. 
+  Eyni zamanda socket istifadəsi zamanı middleware məsələsini də həll etməyi öyrənmişdim.
+</p>
+
+<p>
+  Fikrimdə bu reponu public edərək sizlərə də təqdim etmək var, amma repoda gəzərkən lazımsız çox məlumatların 
+  olduğunu gördüm. Biraz təmizlik işləri gördükdən sonra yəqin ki, reponu public edəcəm.
+</p>
+
+<p>
+
+</p>
+
+<div class="grid grid-cols-12">
+  <div class="col-span-12">
+    <div class="swiper"> 
+      
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper"> 
+          <!-- Slides -->
+          <a class="swiper-slide" data-fslightbox href="/assets/img/portfolio/mozo/1.png">
+            <img 
+              src="/assets/img/portfolio/mozo/1.png"
+              class="object-cover w-full h-full">
+          </a>
+          <a class="swiper-slide" data-fslightbox href="/assets/img/portfolio/mozo/2.png">
+            <img 
+              src="/assets/img/portfolio/mozo/2.png"
+              class="object-cover w-full h-full">
+          </a>
+          <a class="swiper-slide" data-fslightbox href="/assets/img/portfolio/mozo/3.webp">
+            <img 
+              src="/assets/img/portfolio/mozo/3.webp"
+              class="object-cover w-full h-full">
+          </a>
+          <a class="swiper-slide" data-fslightbox href="/assets/img/portfolio/mozo/4.webp">
+            <img 
+              src="/assets/img/portfolio/mozo/4.webp"
+              class="object-cover w-full h-full">
+          </a>
+          <a class="swiper-slide" data-fslightbox href="/assets/img/portfolio/mozo/5.webp">
+            <img 
+              src="/assets/img/portfolio/mozo/5.webp"
+              class="object-cover w-full h-full">
+          </a>
+          <a class="swiper-slide" data-fslightbox href="/assets/img/portfolio/mozo/6.webp">
+            <img 
+              src="/assets/img/portfolio/mozo/6.webp"
+              class="object-cover w-full h-full">
+          </a>
+          <a class="swiper-slide" data-fslightbox href="/assets/img/portfolio/mozo/7.webp">
+            <img 
+              src="/assets/img/portfolio/mozo/7.webp"
+              class="object-cover w-full h-full">
+          </a>
+        </div>
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        {# <div class="swiper-button-prev"></div> #}
+        {# <div class="swiper-button-next"></div> #}
+        <button class="custom-prev absolute top-[50%] start-5 z-3 bg-gray-100/90 flex items-center py-4 px-2 rounded-xl border border-slate-400">
+          <span class="icon-[solar--map-arrow-left-bold-duotone] text-3xl text-slate-700"></span>
+        </button>
+        <button class="custom-next absolute top-[50%] end-5 z-3 bg-gray-100/90 flex items-center py-4 px-2 rounded-xl border border-slate-400">
+          <span class="icon-[solar--map-arrow-right-bold-duotone] text-3xl text-slate-700"></span>
+        </button>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="/assets/js/fslightbox.js"></script>
+<script>
+
+  const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    autoplay: {
+      delay: 3000,
+    },
+    slidesPerView: 6,
+    spaceBetween: 10,
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+    // Navigation arrows
+    navigation: { 
+      nextEl: '.custom-next',
+      prevEl: '.custom-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+
+</script>
+{% endblock %}

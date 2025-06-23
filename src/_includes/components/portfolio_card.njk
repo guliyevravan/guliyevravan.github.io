@@ -9,63 +9,52 @@
 {% set url_name = portfolio.data.url_name %}
 
 
-<header class="flex items-top">
-  
-  <a 
-    href="{{ link or '#' }}"
-    target="{% if link and link == portfolio.data.url %}_blank{% else %}_self{% endif %}"
-    class="text-lg font-medium {% if link %} underline underline-offset-4 {% endif %}"
-    {% if not link %}aria-disabled="true"{% endif %}
-    > 
-    {{ name }}
-  </a>
-  
-  {% if logo %}
-  <picture class="ms-auto w-10 shrink-0">
-    <img src="{{ logo }}">
-  </picture>
-  {% endif %}
+<a 
+  href="{{ link or '#' }}" 
+  {% if not link %}aria-disabled="true"{% endif %}
+  target="{% if link and link == portfolio.data.url %}_blank{% else %}_self{% endif %}"
+  class="flex flex-col h-full">
 
-</header>
-
-<picture class="aspect-square mt-auto grayscale-75">
-  {% if cover %}
-  <img 
-    src="{{ cover }}" 
-    alt="{{ name }}" 
-    class="object-cover">
-  {% endif %}
-</picture>
-
-<footer class="flex flex-wrap items-center gap-2">
-
-  {% if github %}
-  <a href="{{ github }}" target="_blank" class="flex items-center">
-    <i class="icon-[bi--github] text-2xl"></i>
-  </a> 
-  {% endif %}
-
-  {% if url_name %}
-  <a 
-    href="{{ portfolio.data.url or '#' }}" 
-    {% if portfolio.data.url %}target="_blank"{% endif %}
-    class="flex items-center gap-2 border border-slate-500 rounded-sm px-2 active:ring-1">
-    {{ url_name }}
-    {% if portfolio.data.url %}
-    <i class="icon-[mynaui--external-link-solid]"></i>
+  <header class="flex items-top">
+    
+    <h2 class="text-lg font-medium">{{ name }}</h2>
+    
+    {% if logo %}
+    <picture class="ms-auto w-10 shrink-0">
+      <img src="{{ logo }}">
+    </picture>
     {% endif %}
-  </a>
-  {% endif %}
-  
-  {% if portfolio.url %}
-  <a 
-    href="{{ portfolio.url }}" 
-    class="flex items-center gap-2 border border-slate-500 rounded-sm px-2 active:ring-1">
-    Ətraflı
-    <i class="icon-[cuida--arrow-right-outline]"></i>
-  </a>  
-  {% endif %}
 
-</footer>
+  </header>
 
+  <picture class="aspect-square mt-auto grayscale-75">
+    {% if cover %}
+    <img 
+      src="{{ cover }}" 
+      alt="{{ name }}" 
+      class="object-cover">
+    {% endif %}
+  </picture>
+
+  <footer class="flex flex-wrap items-center gap-2 mt-1">
+    
+    {% if github %}
+    <span class="flex items-center">
+      <i class="icon-[bi--github] text-2xl"></i>
+    </span> 
+    {% endif %}
+
+    {% if url_name %}
+    <span  
+      class="flex items-center gap-2 border border-slate-500 rounded-sm px-2">
+      {{ url_name }}
+      {% if portfolio.data.url %}
+      <i class="icon-[mynaui--external-link-solid]"></i>
+      {% endif %}
+    </span>
+    {% endif %}
+
+  </footer>
+
+</a>
 {% endmacro %} 

@@ -31,9 +31,12 @@
 
   {% include "header.njk" %}
   
+
   <main class="max-w-7xl mx-auto px-4 py-4">
-    {{ content | safe }}
+    {% block content %}{% endblock %}
   </main>
+
+  {% block scripts %}{% endblock %}
 
 </body>
 </html> 

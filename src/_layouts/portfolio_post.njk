@@ -1,6 +1,6 @@
----
-layout: base.njk
----
+{% extends './base.njk' %}
+
+{% block content %}
 <header class="flex items-center gap-3 mb-4">
 
   <h1 class="mb-0">{{title}}</h1>
@@ -57,5 +57,6 @@ layout: base.njk
   {% endfor %}
 
 </section>
-
-{{ content | safe }}
+{% endblock %}
+{% block styles %}{% endblock %}
+{% block scripts %}{% endblock %}

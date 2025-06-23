@@ -1,5 +1,4 @@
 ---
-layout: portfolio_post.njk
 tags: portfolio
 date: 2020-12-20T11:42:00.123Z
 name: Azərbaycan Respublikası Hesablama Palatası
@@ -20,7 +19,9 @@ technologies:
   #- css
   #- tailwind
 ---
-
+{% extends './../_layouts/portfolio_post.njk' %}
+{% block content %}
+{{ super() }}
 <p>
   Bu gün sizə Hesablama Palatasının rəsmi veb səhifəsi haqqında məlumat verəcəm. 
   Hesablama Palatası Milli Məclis tərəfindən yaradılan, Azərbaycanın Ali Audit Qurumudur. 
@@ -63,8 +64,8 @@ technologies:
   <li>Multer</li>
   <li>Jsonwebtoken</li>
   <li>Bcryptjs</li>
-
 </ul>
+{% endblock %}
 
 {# <div class="glide">
   <div class="glide__track" data-glide-el="track">

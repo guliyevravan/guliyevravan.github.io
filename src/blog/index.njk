@@ -1,10 +1,11 @@
 ---
-layout: base.njk
 title: Bloq
 description: Bloqum vasitəsilə ən son texnoloji yeniliklərdən xəbərdar ola bilərsiniz
 ---
+{% extends './../_layouts/base.njk' %}
 {% from "components/blog_card.njk" import blogCard %}
 
+{% block content %}
 <h1>Bloq</h1>
 
 <section class="grid grid-cols-12 gap-3">
@@ -14,3 +15,4 @@ description: Bloqum vasitəsilə ən son texnoloji yeniliklərdən xəbərdar ol
   {% endfor %}
 
 </section>
+{% endblock %}

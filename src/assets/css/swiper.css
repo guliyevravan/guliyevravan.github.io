@@ -1,0 +1,7 @@
+@layer components {
+
+  .swiper-button-prev {
+    @apply bg-slate-500! rounded-xl! p-2!;
+  }
+
+}
