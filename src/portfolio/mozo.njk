@@ -107,10 +107,10 @@ technologies:
         <!-- If we need navigation buttons --> 
         {# <div class="swiper-button-prev"></div> #}
         {# <div class="swiper-button-next"></div> #}
-        <button class="custom-prev absolute top-[50%] start-5 z-3 bg-gray-100/90 flex items-center py-4 px-2 rounded-xl border border-slate-400">
+        <button class="swiper-custom-prev absolute top-1/2 start-5 z-3 bg-gray-100/90 flex items-center py-4 px-2 rounded-xl border border-slate-400 -translate-y-1/2">
           <span class="icon-[solar--map-arrow-left-bold-duotone] text-3xl text-slate-700"></span>
         </button>
-        <button class="custom-next absolute top-[50%] end-5 z-3 bg-gray-100/90 flex items-center py-4 px-2 rounded-xl border border-slate-400">
+        <button class="swiper-custom-next absolute top-1/2 end-5 z-3 bg-gray-100/90 flex items-center py-4 px-2 rounded-xl border border-slate-400 -translate-y-1/2">
           <span class="icon-[solar--map-arrow-right-bold-duotone] text-3xl text-slate-700"></span>
         </button>
 
@@ -138,6 +138,15 @@ technologies:
 <script src="/assets/js/fslightbox.js"></script>
 <script>
 
+  
+  const breakpointNames = ['sm', 'md', 'lg', 'xl', '2xl'];
+  const breakpoints = {};
+
+  for (const name of breakpointNames) {
+    const remValue = parseFloat(getComputedStyle(document.documentElement).getPropertyValue(`--breakpoint-${name}`));
+    breakpoints[name] = remValue * 16; // rem to px
+  }
+  
   const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'horizontal',
@@ -145,8 +154,14 @@ technologies:
     autoplay: {
       delay: 3000,
     },
-    slidesPerView: 6,
-    spaceBetween: 10,
+
+    breakpoints: {
+      [breakpoints.sm]: { slidesPerView: 2, spaceBetween: 10 },
+      [breakpoints.md]: { slidesPerView: 3, spaceBetween: 10 },
+      [breakpoints.lg]: { slidesPerView: 4, spaceBetween: 10 },
+      [breakpoints.xl]: { slidesPerView: 5, spaceBetween: 10 },
+      [breakpoints['2xl']]: { slidesPerView: 6, spaceBetween: 10 }
+    },
 
     // If we need pagination
     pagination: {
@@ -156,8 +171,8 @@ technologies:
 
     // Navigation arrows
     navigation: { 
-      nextEl: '.custom-next',
-      prevEl: '.custom-prev',
+      nextEl: '.swiper-custom-prev',
+      prevEl: '.swiper-custom-next',
     },
 
     // And if we need scrollbar
