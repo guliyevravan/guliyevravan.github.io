@@ -52,7 +52,7 @@ description: Hər növ web saytların hazırlanması. Freelance web developer ol
   <h2>Portfolio</h2>
 
   <div class="grid grid-cols-12 gap-3">
-    {% for portfolio in collections.portfolio %}
+    {% for portfolio in collections.portfolio | reverse %}
     <article class="lg:col-span-3 md:col-span-4 xs:col-span-6 col-span-12 border hover:ring-1 ring-slate-400 active:ring-black border-gray-400 p-3 rounded-xl bg-gray-100 h-full flex flex-col">
 
       {{ portfolioCard(portfolio) }}

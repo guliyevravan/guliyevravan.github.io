@@ -28,63 +28,148 @@ technologies:
   Saytın həm <strong>frontend (Vue)</strong> həm də <strong>backend (Nodejs)</strong> hissəsi mənim tərəfimdən hazırlanmışdır
 </p>
 
-<p></p>
-
-<p></p>
-
-<div class="flex items-center mb-4 gap-2">
-  <i class="icon-[line-md--monitor-twotone]"></i>
-  <h2 class="mb-0">Frontend</h2>
-</div>
-<p>
-  Sayt tamamilə SPA (Single Page Application) texnologiyasıdır. Saytda bootstrap ilə paralel olaraq bəzi hissələrdə 
-  native css də istifadə edilib. 
-</p> 
-<p>İstifadə edilən modullar:</p>
-<ul>
-  <li>Vue Router</li>
-  <li>Vuex</li>
-  <li>Axios</li>
-</ul>
-
-
-<div class="flex items-center mb-4 gap-2 mt-3">
-  <i class="icon-[icon-park-twotone--data-server]"></i>
-  <h2 class="mb-0">Backend</h2>
-</div>
-
-<p>
-  Backend RestfulAPI arxitekturasını təmin edir. Hər bir Request URL üçün router-lar bölünüb və 
-  controller, modellər tətbiq olunub. 
-</p> 
-<p>İstifadə edilən modullar:</p>
-<ul>
-  <li>Express</li>
-  <li>Nodemailer</li>
-  <li>Multer</li>
-  <li>Jsonwebtoken</li>
-  <li>Bcryptjs</li>
-</ul>
-{% endblock %}
-
-{# <div class="glide">
-  <div class="glide__track" data-glide-el="track">
-    <ul class="glide__slides">
-      <li class="glide__slide">0</li>
-      <li class="glide__slide" data-glide-autoplay="6000">1</li>
-      <li class="glide__slide">2</li>
+<div class="grid grid-cols-12">
+  <div class="md:col-span-6 col-span-12">
+    <div class="flex items-center mb-4 gap-2">
+      <i class="icon-[line-md--monitor-twotone]"></i>
+      <h2 class="mb-0">Frontend</h2>
+    </div>
+    <p>
+      Sayt tamamilə SPA (Single Page Application) texnologiyasıdır. Saytda bootstrap ilə paralel olaraq bəzi hissələrdə 
+      native css də istifadə edilib. 
+    </p> 
+    <p>İstifadə edilən modullar:</p>
+    <ul>
+      <li>Vue Router</li>
+      <li>Vuex</li>
+      <li>Axios</li>
     </ul>
   </div>
-</div> #}
+
+  <div class="md:col-span-6 col-span-12">
+    <div class="flex items-center mb-4 gap-2 mt-3">
+      <i class="icon-[icon-park-twotone--data-server]"></i>
+      <h2 class="mb-0">Backend</h2>
+    </div>
+
+    <p>
+      Backend RestfulAPI arxitekturasını təmin edir. Hər bir Request URL üçün router-lar bölünüb və 
+      controller, modellər tətbiq olunub. 
+    </p> 
+    <p>İstifadə edilən modullar:</p>
+    <ul>
+      <li>Express</li>
+      <li>Nodemailer</li>
+      <li>Multer</li>
+      <li>Jsonwebtoken</li>
+      <li>Bcryptjs</li>
+    </ul>
+  </div>
+</div>
+
+<div class="grid grid-cols-12 mt-3">
+  <div class="col-span-12">
+    <div class="swiper"> 
+      
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper"> 
+          <!-- Slides -->
+          <a class="swiper-slide aspect-video border border-slate-400 shadow rounded-xl overflow-hidden overflow-y-scroll" data-fslightbox href="/assets/img/portfolio/hesablama-palatasi/1.png">
+            <img 
+              src="/assets/img/portfolio/hesablama-palatasi/1.png"
+              class="object-cover">
+          </a>
+          <a class="swiper-slide aspect-video border border-slate-400 shadow rounded-xl overflow-hidden overflow-y-scroll" data-fslightbox href="/assets/img/portfolio/hesablama-palatasi/2.png">
+            <img 
+              src="/assets/img/portfolio/hesablama-palatasi/2.png"
+              class="object-cover">
+          </a>
+          <a class="swiper-slide aspect-video border border-slate-400 shadow rounded-xl overflow-hidden overflow-y-scroll" data-fslightbox href="/assets/img/portfolio/hesablama-palatasi/3.png">
+            <img 
+              src="/assets/img/portfolio/hesablama-palatasi/3.png"
+              class="object-cover">
+          </a>
+        </div>
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons --> 
+        {# <div class="swiper-button-prev"></div> #}
+        {# <div class="swiper-button-next"></div> #}
+        <button class="swiper-custom-prev absolute top-1/2 start-5 z-3 bg-gray-100/90 flex items-center py-4 px-2 rounded-xl border border-slate-400 -translate-y-1/2 active:ring-1">
+          <span class="icon-[solar--map-arrow-left-bold-duotone] text-3xl text-slate-700"></span>
+        </button>
+        <button class="swiper-custom-next absolute top-1/2 end-5 z-3 bg-gray-100/90 flex items-center py-4 px-2 rounded-xl border border-slate-400 -translate-y-1/2 active:ring-1">
+          <span class="icon-[solar--map-arrow-right-bold-duotone] text-3xl text-slate-700"></span>
+        </button>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+{% endblock %}
 
 {% block scripts %}
-  {# <script src="https://unpkg.com/@glidejs/glide@3.7.1/dist/glide.js"></script>
-  <script>
-    console.log(Glide);
-    new Glide('.glide', {
-      type: 'carousel',
-      startAt: 0,
-      perView: 3
-    }).mount()
-  </script> #}
+{{ super() }}
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="/assets/js/fslightbox.js"></script>
+<script>
+
+  
+  const breakpointNames = ['sm', 'md', 'lg', 'xl', '2xl'];
+  const breakpoints = {};
+
+  for (const name of breakpointNames) {
+    const remValue = parseFloat(getComputedStyle(document.documentElement).getPropertyValue(`--breakpoint-${name}`));
+    breakpoints[name] = remValue * 16; // rem to px
+  }
+  
+  const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    //autoplay: {
+      //delay: 3000,
+    //},
+
+    breakpoints: {
+      [breakpoints.sm]: { slidesPerView: 2, spaceBetween: 10 },
+      [breakpoints.md]: { slidesPerView: 3, spaceBetween: 10 },
+      [breakpoints.lg]: { slidesPerView: 4, spaceBetween: 10 },
+      [breakpoints.xl]: { slidesPerView: 5, spaceBetween: 10 },
+      [breakpoints['2xl']]: { slidesPerView: 1, spaceBetween: 10 }
+    },
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+    // Navigation arrows
+    navigation: { 
+      nextEl: '.swiper-custom-next',
+      prevEl: '.swiper-custom-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+
+</script>
 {% endblock %}
