@@ -1,62 +1,67 @@
 {% extends './base.njk' %}
 
 {% block content %}
-<header class="flex items-center gap-3 mb-4">
+  <header class="flex items-center gap-3 mb-4">
 
-  <h1 class="mb-0">{{title}}</h1>
+    <h1 class="mb-0">{{title}}</h1>
 
-  {% if logo %}
-  <picture class="w-10 shrink-0 ms-auto">
-    <img src="{{logo}}" alt="{{ title | escape }}}">
-  </picture>
-  {% endif %}
-</header>
-
-<section class="mb-4 flex gap-3">
-
-  {% if github %}
-  <a 
-    href="{{ github }}" 
-    target="_blank" 
-    class="flex items-center gap-2 border border-slate-500 rounded-sm px-2 active:ring-1">
-    <i class="icon-[bi--github]"></i>
-    Github
-  </a> 
-  {% endif %}
-
-  {% if url_name %}
-  <a 
-    href="{{ url or '#' }}" 
-    {% if url %}target="_blank"{% endif %}
-    class="flex items-center gap-2 border border-slate-500 rounded-sm px-2 active:ring-1">
-    {{ url_name }}
-    {% if url %}
-    <i class="icon-[mynaui--external-link-solid]"></i>
+    {% if logo %}
+    <picture class="w-10 shrink-0 ms-auto">
+      <img src="{{logo}}" alt="{{ title | escape }}}">
+    </picture>
     {% endif %}
-  </a>
+  </header>
+
+  {% if github or url_name %}
+    <section class="mb-4 flex gap-3">
+
+      {% if github %}
+      <a 
+        href="{{ github }}" 
+        target="_blank" 
+        class="flex items-center gap-2 border border-slate-500 rounded-sm px-2 active:ring-1">
+        <i class="icon-[bi--github]"></i>
+        Github
+      </a> 
+      {% endif %}
+
+      {% if url_name %}
+      <a 
+        href="{{ url or '#' }}" 
+        {% if url %}target="_blank"{% endif %}
+        class="flex items-center gap-2 border border-slate-500 rounded-sm px-2 active:ring-1">
+        {{ url_name }}
+        {% if url %}
+        <i class="icon-[mynaui--external-link-solid]"></i>
+        {% endif %}
+      </a>
+      {% endif %}
+
+    </section>
   {% endif %}
 
-</section>
+  {% if technologies.length > 0 %}
+    <section class="flex items-center gap-2 flex-wrap bg-gray-100 border border-gray-400 rounded-xl p-4 mb-4"> 
 
-<section class="flex items-center gap-2 flex-wrap bg-gray-100 border border-gray-400 rounded-xl p-4 mb-4"> 
+      {% for technology_code in technologies %}
 
-  {% for technology_code in technologies %}
+      {% set technology = all_technologies[technology_code] or false %}
 
-  {% set technology = all_technologies[technology_code] or false %}
+      <div class="flex items-center border px-2 py-1 rounded-sm gap-2 bg-white xs:text-base text-xs {{ technology.class }}">
+        
+        {% if(technology) %}
+        <span class="flex items-center">{{ technology.icon | safe }}</span>
+        <span>{{ technology.name }}</span>
+        {% else %}
+        <span>{{ technology_code }}</span>
+        {% endif %}
 
-  <div class="flex items-center border px-2 py-1 rounded-sm gap-2 bg-white {{ technology.class }}">
-    
-    {% if(technology) %}
-    <span class="flex items-center">{{ technology.icon | safe }}</span>
-    <span>{{ technology.name }}</span>
-    {% else %}
-    <span>{{ technology_code }}</span>
-    {% endif %}
+      </div>
+      {% endfor %}
 
-  </div>
-  {% endfor %}
+    </section>
+  {% endif %}
 
-</section>
 {% endblock %}
 {% block styles %}{% endblock %}
 {% block scripts %}{% endblock %}

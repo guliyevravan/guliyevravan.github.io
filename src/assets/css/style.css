@@ -28,6 +28,7 @@
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-500: oklch(55.1% 0.027 264.364);
+    --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-neutral-700: oklch(37.1% 0 0);
     --color-black: #000;
     --color-white: #fff;
@@ -278,6 +279,9 @@
   }
   .mx-auto {
     margin-inline: auto;
+  }
+  .my-4 {
+    margin-block: calc(var(--spacing) * 4);
   }
   .ms-0 {
     margin-inline-start: calc(var(--spacing) * 0);
@@ -748,9 +752,6 @@
   .aspect-1\/2 {
     aspect-ratio: 1/2;
   }
-  .aspect-16\/3 {
-    aspect-ratio: 16/3;
-  }
   .aspect-16\/7 {
     aspect-ratio: 16/7;
   }
@@ -762,9 +763,6 @@
   }
   .aspect-square {
     aspect-ratio: 1 / 1;
-  }
-  .aspect-video {
-    aspect-ratio: var(--aspect-video);
   }
   .size-full {
     width: 100%;
@@ -872,10 +870,6 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .border-3 {
-    border-style: var(--tw-border-style);
-    border-width: 3px;
-  }
   .border-t {
     border-top-style: var(--tw-border-style);
     border-top-width: 1px;
@@ -964,12 +958,6 @@
   }
   .bg-green-300 {
     background-color: var(--color-green-300);
-  }
-  .bg-slate-400 {
-    background-color: var(--color-slate-400);
-  }
-  .bg-slate-500 {
-    background-color: var(--color-slate-500);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -1130,20 +1118,12 @@
   .underline-offset-4 {
     text-underline-offset: 4px;
   }
-  .shadow {
-    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
   .shadow-2xl {
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-2xs {
     --tw-shadow: 0 1px var(--tw-shadow-color, rgb(0 0 0 / 0.05));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-xl {
-    --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .ring-slate-400 {
@@ -1176,24 +1156,6 @@
         --tw-scale-y: 115%;
         --tw-scale-z: 115%;
         scale: var(--tw-scale-x) var(--tw-scale-y);
-      }
-    }
-  }
-  .group-hover\:scale-125 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        --tw-scale-x: 125%;
-        --tw-scale-y: 125%;
-        --tw-scale-z: 125%;
-        scale: var(--tw-scale-x) var(--tw-scale-y);
-      }
-    }
-  }
-  .group-hover\:text-sm {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        font-size: var(--text-sm);
-        line-height: var(--tw-leading, var(--text-sm--line-height));
       }
     }
   }
@@ -1268,6 +1230,12 @@
       margin-inline-start: auto;
     }
   }
+  .xs\:text-base {
+    @media (width >= 25rem) {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
+    }
+  }
   .sm\:col-span-4 {
     @media (width >= 40rem) {
       grid-column: span 4 / span 4;
@@ -1307,10 +1275,22 @@
       line-height: var(--tw-leading, var(--text-xl--line-height)) !important;
     }
   }
+  .sm\:text-base {
+    @media (width >= 40rem) {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
+    }
+  }
   .sm\:text-sm {
     @media (width >= 40rem) {
       font-size: var(--text-sm);
       line-height: var(--tw-leading, var(--text-sm--line-height));
+    }
+  }
+  .sm\:text-xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
   .min-sm\:hover\:decoration-slate-700 {
@@ -1430,6 +1410,9 @@
   }
   .swiper-lazy-preloader {
     --swiper-theme-color: var(--color-gray-500);
+  }
+  .swiper-pagination-bullet-active {
+    --swiper-theme-color: var(--color-gray-600);
   }
 }
 @property --tw-translate-x {
