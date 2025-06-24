@@ -1,0 +1,105 @@
+---
+tags: portfolio
+date: 2020-12-20T11:42:00.123Z
+name: Uzaqdan menyu sistemi
+title: Restoranlar üçün uzaqdan menyu sistemi
+description: Restoranlar üçün ofisantın yaxınlaşmasına ehtiyac olmadan uzaqdan tablet ilə sifariş sistemi 
+permalink: /portfolio/uzaqdan-menyu/
+cover: /assets/img/portfolio/restoran/cover.svg
+logo: null
+url_name: null
+url: null
+github: null
+technologies: 
+  - vue
+  - nodejs
+  - mysql
+  - vuetify
+  - socket_io
+
+slider_items: [
+    1.png, 2.png, 3.png, 4.png, 5.png, 6.png
+  ]
+---
+{% extends './../_layouts/portfolio_post.njk' %}
+{% block content %}
+{{ super() }}
+<p>
+  Bu proyekti illər əvvəl başlayıb sonra yarımçıq qoymuşam. Sadəcə qismən də olsa 
+  hazır hissələr olduğu üçün saytıma da əlavə etmək qərarına gəldim.
+  Məqsəd restoranlarda ofisantın gəlməsini gözləmədən masalarındakı tablet vasitəsilə 
+  sifariş verməsinə nail olmaq idi. 
+</p>
+
+<div class="grid grid-cols-12 my-4">
+  <div class="col-span-12">
+    <div class="swiper"> 
+
+        <span class="swiper-fullscreen"></span>
+
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper"> 
+           
+          <!-- Slides -->
+          {% for item in slider_items %}
+          <picture 
+            class="swiper-slide aspect-16/7 border border-slate-700 shadow-2xl rounded-xl overflow-hidden overflow-y-scroll" 
+            href="/assets/img/portfolio/restoran/{{ item }}">
+            <img 
+              src="/assets/img/portfolio/restoran/{{ item }}"
+              class="object-cover" loading="lazy">
+            <div class="swiper-lazy-preloader "></div>
+          </picture>
+          {% endfor %}
+        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-scrollbar"></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="/assets/js/swiper-fullscreen.js"></script>
+<script>
+
+  const swiper    = new Swiper('.swiper', {
+    direction: 'horizontal',
+    loop: true,
+    preloadImages: false,
+    slidesPerView: 1, 
+    spaceBetween: 10,
+    lazy: true,
+    keyboard: {
+        enabled: true,
+        onlyInViewport: true, 
+        pageUpDown: true, 
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: { 
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+
+</script>
+{% endblock %}
