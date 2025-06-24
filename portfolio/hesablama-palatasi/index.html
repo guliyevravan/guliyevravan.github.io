@@ -168,14 +168,7 @@
   <div class="col-span-12">
     <div class="swiper"> 
 
-        <span 
-          class="absolute top-0 end-0 z-3 p-10 flex items-center justify-center">
-          <span 
-            onclick="toggleFullscreenSwiper()"
-            class="group flex items-center justify-center p-2 text-xl text-slate-700 rounded-xl border border-slate-400 bg-gray-100/90 cursor-pointer hover:ring-1 active:ring-2">
-            <i class="icon-[mingcute--fullscreen-fill] group-hover:scale-115 group-hover:transition"></i>
-          </span>
-        </span>
+        <span class="swiper-fullscreen"></span>
 
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper"> 
@@ -364,17 +357,9 @@
           
         </div>
 
-        <!-- If we need pagination -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
         <div class="swiper-pagination"></div>
-
-        <button class="swiper-custom-prev absolute top-1/2 start-5 z-3 bg-gray-100/90 flex items-center py-4 px-2 rounded-xl border border-slate-400 -translate-y-1/2 active:ring-1">
-          <span class="icon-[solar--map-arrow-left-bold-duotone] text-3xl text-slate-700"></span>
-        </button>
-        <button class="swiper-custom-next absolute top-1/2 end-5 z-3 bg-gray-100/90 flex items-center py-4 px-2 rounded-xl border border-slate-400 -translate-y-1/2 active:ring-1">
-          <span class="icon-[solar--map-arrow-right-bold-duotone] text-3xl text-slate-700"></span>
-        </button>
-
-        <!-- If we need scrollbar -->
         <div class="swiper-scrollbar"></div>
         
       </div>
@@ -427,44 +412,33 @@
   
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="/assets/js/swiper-fullscreen.js"></script>
 <script>
 
-  let fullscreen  = false;
-
   const swiper    = new Swiper('.swiper', {
-  
     direction: 'horizontal',
     loop: true,
     preloadImages: false,
     slidesPerView: 1, 
     spaceBetween: 10,
     lazy: true,
+    keyboard: {
+        enabled: true,
+        onlyInViewport: true, 
+        pageUpDown: true, 
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
     navigation: { 
-      nextEl: '.swiper-custom-next',
-      prevEl: '.swiper-custom-prev',
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
     scrollbar: {
       el: '.swiper-scrollbar',
     },
   });
-
-  function toggleFullscreenSwiper() {
-
-    if(document.fullscreenElement){
-      document.exitFullscreen();
-      return;
-    }
-
-    const swiperContainer = document.querySelector('.swiper');
-    
-    if (swiperContainer.requestFullscreen) {
-      swiperContainer.requestFullscreen();
-    }
-  }
 
 </script>
 

@@ -215,6 +215,7 @@
       
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper"> 
+
           <!-- Slides -->
           <a class="swiper-slide" data-fslightbox href="/assets/img/portfolio/mozo/1.webp">
             <img 
@@ -255,16 +256,8 @@
 
         <!-- If we need pagination -->
         <div class="swiper-pagination"></div>
-
-        <button class="swiper-custom-prev absolute top-1/2 start-5 z-3 bg-gray-100/90 flex items-center py-4 px-2 rounded-xl border border-slate-400 -translate-y-1/2">
-          <span class="icon-[solar--map-arrow-left-bold-duotone] text-3xl text-slate-700"></span>
-        </button>
-        <button class="swiper-custom-next absolute top-1/2 end-5 z-3 bg-gray-100/90 flex items-center py-4 px-2 rounded-xl border border-slate-400 -translate-y-1/2">
-          <span class="icon-[solar--map-arrow-right-bold-duotone] text-3xl text-slate-700"></span>
-        </button>
-
-        <!-- If we need scrollbar -->
-        
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
         
       </div>
     </div>
@@ -280,7 +273,6 @@
 <script src="/assets/js/fslightbox.js"></script>
 <script>
 
-  
   const breakpointNames = ['sm', 'md', 'lg', 'xl', '2xl'];
   const breakpoints = {};
 
@@ -290,13 +282,12 @@
   }
   
   const swiper = new Swiper('.swiper', {
-    // Optional parameters
+  
     direction: 'horizontal',
     loop: true,
     autoplay: {
       delay: 3000,
     },
-
     breakpoints: {
       [breakpoints.sm]: { slidesPerView: 2, spaceBetween: 10 },
       [breakpoints.md]: { slidesPerView: 3, spaceBetween: 10 },
@@ -304,20 +295,14 @@
       [breakpoints.xl]: { slidesPerView: 5, spaceBetween: 10 },
       [breakpoints['2xl']]: { slidesPerView: 6, spaceBetween: 10 }
     },
-
-    // If we need pagination
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
-
-    // Navigation arrows
     navigation: { 
-      nextEl: '.swiper-custom-next',
-      prevEl: '.swiper-custom-prev',
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
-
-    // And if we need scrollbar
     scrollbar: {
       el: '.swiper-scrollbar',
     },
