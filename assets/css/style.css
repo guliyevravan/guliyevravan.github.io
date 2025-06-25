@@ -254,6 +254,9 @@
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
   }
+  .-ms-1 {
+    margin-inline-start: calc(var(--spacing) * -1);
+  }
   .ms-0 {
     margin-inline-start: calc(var(--spacing) * 0);
   }
