@@ -49,5 +49,10 @@ export default {
     icon: `<i class="icon-[file-icons--cordova]"></i>`,
     class: `text-slate-800 border-slate-800`
   },
+  puppeteer: {
+    name: 'Puppeteer',
+    icon: `<i class="icon-[devicon--puppeteer]"></i>`,
+    class: `text-green-800 border-green-800`,
+  }
   
 }

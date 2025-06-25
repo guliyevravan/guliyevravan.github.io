@@ -1,0 +1,53 @@
+---
+tags: portfolio
+date: 2024-04-25T11:42:00.123Z
+name: Nulink Testnet Bot
+title: Nulink Testnet Bot
+description: Nulink (NLK) token testneti üçün avtomatlaşdırılmış sistem
+image: /assets/img/portfolio/nulink-testnet-bot/meta_image.png
+permalink: /portfolio/nulink-testnet-bot/
+cover: /assets/img/portfolio/nulink-testnet-bot/cover.svg
+logo: /assets/img/portfolio/nulink-testnet-bot/logo.svg
+url_name: null
+url: null
+github: null
+technologies: 
+  - nodejs
+  - puppeteer
+
+slider_items: [
+    1.png, 2.png, 3.png, 4.png, 5.png, 6.png, 7.png, 8.png, 9.png, 10.png,
+    11.png, 12.png, 13.png, 14.png, 15.png, 16.png, 17.png, 18.png, 19.png, 20.png,
+  ]
+---
+{% extends './../_layouts/portfolio_post.njk' %}
+{% block content %}
+{{ super() }}
+
+<p>
+  Sistemi özüm üçün hazırlamışam. 
+  <a href="https://www.nulink.org/" target="_blank" 
+  class="text-blue-700 underline hover:opacity-90 font-bold">Nulink (NLK)</a>  
+  öz tokenini yaratmazdan əvvəl testnet keçirirdi. 
+  <a href="https://pptr.dev/" 
+  target="blank"
+  class="text-blue-700 underline hover:opacity-90 font-bold">Puppeteer</a> 
+  istifadə edərək həmin prosesi avtomatlaşdırdım. 
+  Eyni zamanda <i>child process</i> yaradılması və main process ilə idarə edilməsi mərhələsini də bu sistem sayəsində 
+  daha yaxşı qavramışdım. Sistemdəki bütün prosesləri aşağıdakı videodan izləyə bilərsiniz.
+</p>
+
+{# <p>
+  Bu gün sizə Hesablama Palatasının rəsmi veb səhifəsi haqqında məlumat verəcəm. 
+  Hesablama Palatası Milli Məclis tərəfindən yaradılan, Azərbaycanın Ali Audit Qurumudur. 
+  Saytın həm <strong>frontend (Vue)</strong> həm də <strong>backend (Nodejs)</strong> hissəsi mənim tərəfimdən hazırlanmışdır
+</p> #}
+
+<div class="my-4">
+  <div class="max-w-2xl w-full aspect-video border border-slate-400 rounded-xl overflow-hidden shadow-2xl">
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xcETcT4MRpY?si=2jeMMtk0NB8MhX1y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</div>
+
+
+{% endblock %}
