@@ -15,14 +15,13 @@
   
   <meta property="og:title" content="{{ title | escape }} | {{ configs.title }}">
   <meta property="og:description" content="{{ description or configs.description | collapseWhitespace | escape }}">
-  <meta property="og:image" content="{{ image or configs.image }}">
-  <meta property="og:url" content="{{ page.url }}">
+  <meta property="og:image" content="{{configs.site_url}}{{ image or configs.image }}">
+  <meta property="og:url" content="{{configs.site_url}}{{ page.url }}">
   <meta property="og:type" content="website">
-
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title | escape }} | {{ configs.title }}">
   <meta name="twitter:description" content="{{ description or configs.description | collapseWhitespace | escape }}">
-  <meta name="twitter:image" content="{{ image or configs.image }}">
+  <meta name="twitter:image" content="{{configs.site_url}}{{ image or configs.image }}">
 
   {% block styles %}{% endblock %}
 
@@ -46,6 +45,7 @@
   
 
   <main class="max-w-7xl mx-auto px-4 py-4">
+    
     {% block content %}{% endblock %}
   </main>
 
