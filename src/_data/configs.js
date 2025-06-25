@@ -2,6 +2,7 @@ export default {
   title: 'Ravan Guliyev',
   description: `Hər növ web saytların hazırlanması. Freelance web developer olaraq, 
   işinizi internetdə ən yaxşı təmsil edən, sürətli və cəzbedici saytlar hazırlayıram.`,
+  image: '/assets/img/static/meta_image.png',
   linkedin: 'https://www.linkedin.com/in/guliyevravan/',
   facebook: 'https://www.facebook.com/ravanguliyev94',
   instagram: 'https://www.instagram.com/guliyev.ravan/',

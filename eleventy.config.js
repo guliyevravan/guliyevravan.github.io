@@ -11,7 +11,7 @@ export default async function (eleventyConfig) {
  
   eleventyConfig.addPassthroughCopy("./src/favicon.ico"); 
   eleventyConfig.addPassthroughCopy("./src/assets/css/style.css");
-  eleventyConfig.addPassthroughCopy("./src/assets/img");
+  eleventyConfig.addPassthroughCopy("./src/assets/img"); 
   eleventyConfig.addPassthroughCopy("./src/assets/js");
 
   eleventyConfig.addFilter('numberFormat', number => {

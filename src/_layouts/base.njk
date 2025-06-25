@@ -11,21 +11,18 @@
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-  <!-- General -->
-  {# <meta name="description" content="{{ description or configs.description | collapseWhitespace | escape }}"> #}
-
-  <!-- Open Graph -->
-  {# <meta property="og:title" content="{{ title | escape }} | {{ configs.title }}">
+  <meta name="description" content="{{ description or configs.description | collapseWhitespace | escape }}">
+  
+  <meta property="og:title" content="{{ title | escape }} | {{ configs.title }}">
   <meta property="og:description" content="{{ description or configs.description | collapseWhitespace | escape }}">
-  <meta property="og:image" content="{{ page.image | default('https://example.com/default-social-image.jpg') }}">
+  <meta property="og:image" content="{{ image or configs.image }}">
   <meta property="og:url" content="{{ page.url }}">
-  <meta property="og:type" content="website"> #}
+  <meta property="og:type" content="website">
 
-  <!-- Twitter Card -->
-  {# <meta name="twitter:card" content="summary_large_image"> #}
-  {# <meta name="twitter:title" content="{{ page.title | default('Sayt Başlığı') }}"> #}
-  {# <meta name="twitter:description" content="{{ page.description | default('Sayt təsviri') }}"> #}
-  {# <meta name="twitter:image" content="{{ page.image | default('https://example.com/default-social-image.jpg') }}"> #}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title | escape }} | {{ configs.title }}">
+  <meta name="twitter:description" content="{{ description or configs.description | collapseWhitespace | escape }}">
+  <meta name="twitter:image" content="{{ image or configs.image }}">
 
   {% block styles %}{% endblock %}
 
